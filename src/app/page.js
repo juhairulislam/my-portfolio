@@ -1,17 +1,18 @@
 import Navbar from "@/components/Navbar";
+import Hero   from "@/components/sections/Hero";
 
 export default function Home() {
   return (
     <main>
-      <Navbar/>
+      <Navbar />
+      <Hero />
 
-      {/* temporary section placeholders so scroll works */}
-      <section id="home"      className="min-h-screen flex items-center justify-center text-4xl font-bold">Home</section>
-      <section id="about"     className="min-h-screen flex items-center justify-center text-4xl font-bold">About</section>
-      <section id="skills"    className="min-h-screen flex items-center justify-center text-4xl font-bold">Skills</section>
-      <section id="education" className="min-h-screen flex items-center justify-center text-4xl font-bold">Education</section>
-      <section id="projects"  className="min-h-screen flex items-center justify-center text-4xl font-bold">Projects</section>
-      <section id="contact"   className="min-h-screen flex items-center justify-center text-4xl font-bold">Contact</section>
+      {/* temporary placeholders */}
+      <section id="about"     className="min-h-screen flex items-center justify-center text-3xl font-bold text-gray-400">About</section>
+      <section id="skills"    className="min-h-screen flex items-center justify-center text-3xl font-bold text-gray-400">Skills</section>
+      <section id="education" className="min-h-screen flex items-center justify-center text-3xl font-bold text-gray-400">Education</section>
+      <section id="projects"  className="min-h-screen flex items-center justify-center text-3xl font-bold text-gray-400">Projects</section>
+      <section id="contact"   className="min-h-screen flex items-center justify-center text-3xl font-bold text-gray-400">Contact</section>
     </main>
   );
 }
