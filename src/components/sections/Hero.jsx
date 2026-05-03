@@ -18,16 +18,10 @@ const ROLES = [
 ];
 
 const SOCIALS = [
-  { icon: FiGithub,    href: "https://github.com/juhairulislam",             label: "GitHub"   },
+  { icon: FiGithub,    href: "https://github.com/juhairulislam",            label: "GitHub"   },
   { icon: FiLinkedin,  href: "https://www.linkedin.com/in/juhairul-islam",    label: "LinkedIn" },
-  { icon: FaXTwitter,  href: "https://x.com/@_juhairul",                      label: "Twitter"  },
+  { icon: FaXTwitter,  href: "https://x.com/@_juhairul",                       label: "Twitter"  },
   { icon: FaFacebookF, href: "https://web.facebook.com/juhairul.islam.2024", label: "Facebook" },
-];
-
-const STATS = [
-  { value: "1+",  label: "Years Exp."  },
-  { value: "10+", label: "Projects"    },
-  { value: "5+",  label: "Clients"     },
 ];
 
 const fadeUp = {
@@ -78,26 +72,42 @@ function useTyping(words) {
 export default function Hero() {
   const typedText = useTyping(ROLES);
   const [mounted, setMounted] = useState(false);
+  const [codingDays, setCodingDays] = useState(0);
 
-  // Fix hydration mismatch by waiting for mount
   useEffect(() => {
     setMounted(true);
+    
+    // Live calculation starting from January 1, 2026
+    const startDate = new Date("2026-01-01");
+    const today = new Date();
+    const diffInMs = today - startDate;
+    const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
+    
+    setCodingDays(diffInDays > 0 ? diffInDays : 0);
   }, []);
 
   if (!mounted) {
-    return null; // Or return a simple loader/skeleton
+    return null; 
   }
+
+  const STATS = [
+    { value: `${codingDays}+`, label: "Days of Coding" },
+    { value: "10+", label: "Projects" },
+    { value: "5+",  label: "Open Source" },
+  ];
 
   return (
     <section
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden bg-white dark:bg-[#0a0a0f] px-6 md:px-12 lg:px-20 pt-24 pb-16"
     >
+      {/* Background Decor */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full bg-indigo-500/10 blur-[120px] pointer-events-none -translate-x-1/2 -translate-y-1/3" />
       <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] rounded-full bg-violet-500/10 blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full flex flex-col-reverse md:flex-row items-center gap-14 md:gap-10 lg:gap-20">
 
+        {/* Left Content */}
         <div className="flex-1 min-w-0">
           <motion.div
             variants={fadeUp} custom={0}
@@ -105,7 +115,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 mb-5 bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs font-medium px-4 py-1.5 rounded-full"
           >
             <span className="w-2 h-2 rounded-full bg-indigo-500 shadow-[0_0_8px_3px_rgba(99,102,241,0.7)] animate-pulse" />
-            Available for Work
+            Available for Collaboration
           </motion.div>
 
           <motion.h1
@@ -182,6 +192,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
+        {/* Right Content - Image & Stats */}
         <motion.div
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -204,18 +215,20 @@ export default function Hero() {
               </div>
             </div>
 
+            {/* Badge 1: Status */}
             <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
               className="absolute -bottom-3 -left-4 bg-white dark:bg-[#12121a] border border-gray-200 dark:border-white/10 rounded-2xl px-3 py-2 shadow-xl flex items-center gap-2"
             >
-              <span className="text-xl">💻</span>
+              <span className="text-xl">⏳</span>
               <div>
-                <p className="text-[10px] text-gray-500 dark:text-zinc-500 leading-none">Experience</p>
-                <p className="text-xs font-bold text-gray-900 dark:text-white">1+ Years</p>
+                <p className="text-[10px] text-gray-500 dark:text-zinc-500 leading-none">Status</p>
+                <p className="text-xs font-bold text-gray-900 dark:text-white">Active Now</p>
               </div>
             </motion.div>
 
+            {/* Badge 2: Projects */}
             <motion.div
               animate={{ y: [0, 6, 0] }}
               transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut", delay: 0.5 }}
@@ -229,6 +242,7 @@ export default function Hero() {
             </motion.div>
           </div>
 
+          {/* Bottom Stats Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
