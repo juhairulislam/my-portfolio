@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import About from "@/components/sections/About";
 import Education from "@/components/sections/Education";
 import Hero   from "@/components/sections/Hero";
+import ProjectsSection from "@/components/sections/Projects";
 import Skills from "@/components/sections/Skills";
 
 export default function Home() {
@@ -19,7 +20,8 @@ export default function Home() {
       {/* <section id="education" className="min-h-screen flex items-center justify-center text-3xl font-bold text-gray-400">Education</section> */}
 
       <Education/>
-      <section id="projects"  className="min-h-screen flex items-center justify-center text-3xl font-bold text-gray-400">Projects</section>
+      {/* <section id="projects"  className="min-h-screen flex items-center justify-center text-3xl font-bold text-gray-400">Projects</section> */}
+      <ProjectsSection/>
       <section id="contact"   className="min-h-screen flex items-center justify-center text-3xl font-bold text-gray-400">Contact</section>
     </main>
   );
