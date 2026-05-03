@@ -207,6 +207,7 @@ export default function ProjectDetail({ params }) {
         <div className="flex items-center justify-between pt-6 border-t border-white/[0.05]">
           <Link
             href="/#projects"
+            
             className="inline-flex items-center gap-2 text-white/30 hover:text-white/60 text-sm transition-colors duration-200"
           >
             <BackIcon />
@@ -219,7 +220,7 @@ export default function ProjectDetail({ params }) {
                 href={`/projects/${p.id}`}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
                   p.id === project.id
-                    ? `bg-gradient-to-r ${project.color} scale-125`
+                    ? `bg-linear-to-r ${project.color} scale-125`
                     : "bg-white/20 hover:bg-white/40"
                 }`}
                 title={p.name}
