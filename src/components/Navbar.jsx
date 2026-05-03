@@ -44,9 +44,16 @@ export default function Navbar() {
   }, []);
 
   /* ── dark / light class on <html> ── */
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", darkMode);
-  }, [darkMode]);
+  /* FIXED LOGIC FOR TAILWIND V4 */
+/* ── dark / light class on <html> ── */
+useEffect(() => {
+  const root = window.document.documentElement;
+  if (darkMode) {
+    root.classList.add("dark");
+  } else {
+    root.classList.remove("dark");
+  }
+}, [darkMode]);
 
   const handleNavClick = (href) => {
     setActiveLink(href);
@@ -78,7 +85,6 @@ export default function Navbar() {
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
           >
-            {/* glowing dot */}
             <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 shadow-[0_0_8px_3px_rgba(99,102,241,0.7)] group-hover:shadow-[0_0_14px_5px_rgba(99,102,241,0.9)] transition-shadow duration-300" />
             <span className="font-bold text-lg tracking-tight text-gray-900 dark:text-white">
               Juhairul
@@ -123,21 +129,11 @@ export default function Navbar() {
 
           {/* ── Right side: theme toggle + hamburger ── */}
           <div className="flex items-center gap-3">
-
-            {/* Theme Toggle */}
             <motion.button
               onClick={() => setDarkMode(!darkMode)}
               whileHover={{ scale: 1.1, rotate: 15 }}
               whileTap={{ scale: 0.9 }}
-              className="
-                p-2 rounded-full
-                bg-gray-100 dark:bg-white/10
-                border border-gray-200 dark:border-white/10
-                text-gray-700 dark:text-gray-300
-                hover:text-indigo-600 dark:hover:text-indigo-400
-                transition-colors duration-300
-                backdrop-blur-md
-              "
+              className="p-2 rounded-full bg-gray-100 dark:bg-white/10 border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300 backdrop-blur-md"
               aria-label="Toggle theme"
             >
               <AnimatePresence mode="wait" initial={false}>
@@ -154,17 +150,10 @@ export default function Navbar() {
               </AnimatePresence>
             </motion.button>
 
-            {/* Hamburger (mobile) */}
             <motion.button
               onClick={() => setMenuOpen(!menuOpen)}
               whileTap={{ scale: 0.9 }}
-              className="
-                md:hidden p-2 rounded-full
-                bg-gray-100 dark:bg-white/10
-                border border-gray-200 dark:border-white/10
-                text-gray-700 dark:text-gray-200
-                text-xl transition-colors duration-300
-              "
+              className="md:hidden p-2 rounded-full bg-gray-100 dark:bg-white/10 border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-200 text-xl transition-colors duration-300"
               aria-label="Toggle menu"
             >
               {menuOpen ? <HiX /> : <HiMenuAlt3 />}
@@ -177,7 +166,6 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
               key="backdrop"
               initial={{ opacity: 0 }}
@@ -187,24 +175,14 @@ export default function Navbar() {
               className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm md:hidden"
             />
 
-            {/* Drawer */}
             <motion.div
               key="drawer"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="
-                fixed top-0 right-0 bottom-0 z-50
-                w-72 md:hidden
-                bg-white/80 dark:bg-[#0d0d14]/90
-                backdrop-blur-2xl
-                border-l border-gray-200 dark:border-white/10
-                flex flex-col pt-24 px-8 gap-4
-                shadow-2xl
-              "
+              className="fixed top-0 right-0 bottom-0 z-50 w-72 md:hidden bg-white/80 dark:bg-[#0d0d14]/90 backdrop-blur-2xl border-l border-gray-200 dark:border-white/10 flex flex-col pt-24 px-8 gap-4 shadow-2xl"
             >
-              {/* Close button */}
               <motion.button
                 onClick={() => setMenuOpen(false)}
                 className="absolute top-5 right-5 p-2 rounded-full bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-white text-xl"
@@ -219,25 +197,18 @@ export default function Navbar() {
                   <motion.button
                     key={link.href}
                     initial={{ x: 40, opacity: 0 }}
-                    animate={{ x: 0,  opacity: 1 }}
+                    animate={{ x: 0,   opacity: 1 }}
                     transition={{ delay: i * 0.07 }}
                     onClick={() => handleNavClick(link.href)}
-                    className={`
-                      text-left text-base font-semibold px-4 py-3 rounded-xl
-                      transition-all duration-300
-                      ${isActive
-                        ? "bg-indigo-600 text-white shadow-lg shadow-indigo-500/30"
-                        : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10"}
-                    `}
+                    className={`text-left text-base font-semibold px-4 py-3 rounded-xl transition-all duration-300 ${
+                      isActive ? "bg-indigo-600 text-white shadow-lg shadow-indigo-500/30" : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10"
+                    }`}
                   >
                     {link.label}
                   </motion.button>
                 );
               })}
-
-              <div className="mt-auto mb-10 text-center text-xs text-gray-400 dark:text-gray-600">
-                © 2025 Juhairul Islam
-              </div>
+              <div className="mt-auto mb-10 text-center text-xs text-gray-400 dark:text-gray-600">© 2025 Juhairul Islam</div>
             </motion.div>
           </>
         )}
