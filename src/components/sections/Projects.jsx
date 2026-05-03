@@ -3,13 +3,18 @@
 import Link from "next/link";
 import Image from "next/image";
 
+// ── Project Data ──────────────────────────────────────────────────────────
 export const projects = [
   {
     id: "suncart",
     name: "SunCart",
     tagline: "Summer Essentials Store",
     description:
-      "A modern summer-themed eCommerce platform where users can explore and purchase seasonal products like sunglasses, outfits, and skincare.",
+      "A high-performance summer-themed e-commerce application built with the Next.js App Router. This platform provides a seamless shopping experience where users can browse seasonal essentials, view detailed product information through protected routes, and manage their orders with a robust authentication system.",
+    challenges:
+      "Implementing BetterAuth for secure Google social login while maintaining proxy-protected routes was a significant hurdle. Additionally, ensuring smooth data persistence with MongoDB and handling dynamic route rendering in Next.js required careful configuration to avoid hydration errors.",
+    improvements:
+      "I plan to integrate a secure payment gateway like SSLCommerz or Stripe for real-time transactions, implement a comprehensive order tracking dashboard, and add an AI-powered product recommendation engine based on user browsing history.",
     image: "/projects/suncart.png",
     tech: ["Next.js", "Tailwind CSS", "DaisyUI", "BetterAuth", "MongoDB"],
     live: "https://a-08-juhairul-b13.vercel.app/",
@@ -24,7 +29,11 @@ export const projects = [
     name: "KeenKeeper",
     tagline: "Keep Your Friendships Alive",
     description:
-      "A modern friendship management application designed to help users track interactions and visualize communication patterns.",
+      "KeenKeeper is a specialized relationship management tool designed to fight 'friendship fade.' By leveraging data visualization, it helps users track their last interactions and set specific communication goals, transforming social habits into visual insights to maintain long-term connections.",
+    challenges:
+      "The primary challenge was integrating Recharts for dynamic data visualization—specifically, transforming raw interaction logs into meaningful pie charts. Creating a logic-heavy timeline filter that updates in real-time based on interaction types (Call/Text/Video) also required advanced state management.",
+    improvements:
+      "Upcoming features include automated browser push notifications to remind users to reach out to friends and an advanced 'Relationship Health' score calculated by interaction frequency and interaction quality metrics.",
     image: "/projects/keenkeeper.png",
     tech: ["Next.js", "Tailwind CSS", "DaisyUI", "Recharts", "React Icons"],
     live: "https://a-07-juhairul-b-13-f5xy.vercel.app/",
@@ -39,7 +48,11 @@ export const projects = [
     name: "Digital Tools Store",
     tagline: "Digital Tools Buying Platform",
     description:
-      "An interactive React-based e-commerce interface for browsing and purchasing digital tools with dynamic state management.",
+      "A streamlined digital marketplace interface focusing on a frictionless user experience. This project demonstrates advanced React state management, featuring a dynamic dual-view layout where users can switch between a product gallery and a real-time updated shopping cart without page reloads.",
+    challenges:
+      "Managing the global cart state—ensuring that adding, removing, and calculating totals happened instantly across different UI components—was the core technical challenge. Implementing React-Toastify for non-intrusive user feedback while maintaining a clean UI aesthetic required precise timing.",
+    improvements:
+      "I aim to add a persistent cart feature using Browser Local Storage, implement a comprehensive product search with category filtering, and create a system for digital product delivery via email after checkout.",
     image: "/projects/digitool.png",
     tech: ["React.js", "JavaScript ES6+", "Tailwind CSS", "DaisyUI"],
     live: "https://a06-juhairul-b13.netlify.app",
@@ -54,7 +67,11 @@ export const projects = [
     name: "GitHub Issue Tracker",
     tagline: "API-Driven Issue Management",
     description:
-      "An API-driven interface designed to display and organize GitHub issue data with secure login and dynamic fetching.",
+      "A professional-grade dashboard for managing software development workflows. By consuming the GitHub API, this application provides an organized view of repository issues, categorized by their current state (Open/Closed), allowing developers to analyze project bottlenecks efficiently.",
+    challenges:
+      "Handling asynchronous API requests and managing the DOM to render large JSON payloads efficiently was a major task. Creating a tab-based filtering system that remains performant while searching through hundreds of issues required optimizing JavaScript array methods.",
+    improvements:
+      "Future iterations will include the ability to create and edit issues directly from the app using GitHub Personal Access Tokens (PAT) and a markdown previewer for issue comments and descriptions.",
     image: "/projects/github.png",
     tech: ["HTML5", "CSS3", "JavaScript", "API Integration"],
     live: "https://juhairulislam.github.io/A05-Juhairul-B13/",
@@ -65,6 +82,8 @@ export const projects = [
     lightGlow: "rgba(16, 185, 129, 0.08)",
   },
 ];
+
+// ── Components ────────────────────────────────────────────────────────────
 
 const ArrowIcon = () => (
   <svg className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -110,7 +129,7 @@ export default function ProjectsSection() {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <article
               key={project.id}
               className="group relative rounded-3xl border border-slate-200 dark:border-white/[0.07] bg-white dark:bg-white/[0.02] backdrop-blur-sm overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/10 dark:hover:border-white/[0.12]"
@@ -124,7 +143,6 @@ export default function ProjectsSection() {
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                {/* Improved Overlay for Light/Dark */}
                 <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent dark:from-[#06060f] dark:via-[#06060f]/40 dark:to-transparent opacity-80" />
                 
                 <div className="absolute top-4 right-4">
