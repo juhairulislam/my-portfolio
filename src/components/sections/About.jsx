@@ -2,45 +2,45 @@
 
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { FiCode, FiCpu, FiLayers, FiHeart } from "react-icons/fi";
-import { GiCricketBat, GiPaintBrush } from "react-icons/gi";
-import { MdOutlineTravelExplore } from "react-icons/md";
+import { FiCode, FiLayers, FiActivity, FiTarget } from "react-icons/fi";
+import { GiAtom, GiCricketBat } from "react-icons/gi";
+import { TbBrain } from "react-icons/tb";
 
-/* ─── data ─── */
+/* ─── Data ─── */
 const SKILLS = [
-  { label: "React.js", pct: 90 },
-  { label: "Node.js", pct: 82 },
-  { label: "MongoDB", pct: 78 },
-  { label: "TypeScript", pct: 72 },
-  { label: "Next.js", pct: 80 },
+  { label: "Next.js / React.js", pct: 90 },
+  { label: "MongoDB / Mongoose", pct: 85 },
+  { label: "Node.js / Express.js", pct: 80 },
+  { label: "TypeScript", pct: 75 },
+  { label: "Tailwind CSS", pct: 95 },
 ];
 
 const PASSIONS = [
   {
     icon: FiCode,
-    title: "Clean Code",
-    desc: "I treat every codebase like a living document — readable, maintainable, and purposeful.",
-  },
-  {
-    icon: FiCpu,
-    title: "Performance",
-    desc: "Speed is a feature. I obsess over lighthouse scores and optimal rendering strategies.",
+    title: "Structure & Creativity",
+    desc: "I balance maintainable, clean code with intuitive, user-centered design for a professional feel.",
   },
   {
     icon: FiLayers,
-    title: "Architecture",
-    desc: "Scalable design patterns excite me. I think in systems, not just components.",
+    title: "Scalable Systems",
+    desc: "From eCommerce platforms to API-driven tools, I build systems that grow and perform efficiently.",
+  },
+  {
+    icon: TbBrain,
+    title: "Future in AI",
+    desc: "Currently mastering software fundamentals with a long-term goal of transitioning into AI/ML engineering.",
   },
 ];
 
 const HOBBIES = [
+  { icon: GiAtom, label: "Physics Enthusiast" },
   { icon: GiCricketBat, label: "Cricket" },
-  { icon: GiPaintBrush, label: "Painting" },
-  { icon: MdOutlineTravelExplore, label: "Travel" },
-  { icon: FiHeart, label: "Open Source" },
+  { icon: FiActivity, label: "Disciplined Living" },
+  { icon: FiTarget, label: "Purpose Driven" },
 ];
 
-/* ─── animation variants ─── */
+/* ─── Animation Variants ─── */
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
   visible: (i = 0) => ({
@@ -95,16 +95,14 @@ export default function About() {
     <section
       id="about"
       ref={ref}
-      // ওস্তাদ, এখানে ক্লাসনেমগুলো এক লাইনে রাখা হয়েছে যাতে Hydration Mismatch না হয়
       className="relative overflow-hidden bg-white dark:bg-[#0a0a0f] px-6 md:px-12 lg:px-20 py-24 md:py-32"
-      style={{ visibility: isClient ? "visible" : "hidden" }} // মাউন্ট হওয়ার আগে জাস্ট হিডেন থাকবে
+      style={{ visibility: isClient ? "visible" : "hidden" }}
     >
       {/* Background Blobs */}
       <div className="absolute top-1/4 right-0 w-[400px] h-[400px] rounded-full bg-indigo-500/10 blur-[120px] pointer-events-none translate-x-1/2" />
       <div className="absolute bottom-0 left-1/4 w-[280px] h-[280px] rounded-full bg-violet-500/10 blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full">
-        {/* Section Label */}
         <motion.div
           variants={fadeUp} custom={0}
           initial="hidden" animate={inView ? "visible" : "hidden"}
@@ -131,16 +129,16 @@ export default function About() {
               className="space-y-5"
             >
               <p className="text-sm sm:text-base text-gray-500 dark:text-zinc-400 leading-relaxed">
-                My coding journey began with a single curiosity — <em className="text-gray-700 dark:text-zinc-200 not-italic font-medium">"How does a website actually work?"</em> That question led me into a passion for building things that people use every day.
+                My coding journey began with a single curiosity that quickly evolved into building real-world, functional systems. I am a <span className="text-indigo-400 font-semibold text-gray-700 dark:text-zinc-200 not-italic">Full-stack Developer</span> focused on building modern, scalable web applications with clean, user-centered design.
               </p>
               <p className="text-sm sm:text-base text-gray-500 dark:text-zinc-400 leading-relaxed">
-                Today I specialise in the <span className="text-indigo-400 font-semibold">MERN stack</span> — crafting fast and beautifully designed interfaces with scalable back-ends.
+                Having developed platforms like eCommerce systems, authentication modules, and API-driven trackers, I’ve strengthened my ability to manage complex application states and design systems that solve meaningful problems.
               </p>
             </motion.div>
 
-            {/* Hobbies */}
+            {/* Hobbies & Interests */}
             <motion.div variants={fadeUp} custom={3} initial="hidden" animate={inView ? "visible" : "hidden"}>
-              <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-zinc-600 mb-4">Life beyond the screen</p>
+              <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-zinc-600 mb-4">Beyond the Terminal</p>
               <div className="flex flex-wrap gap-3">
                 {HOBBIES.map(({ icon: Icon, label }) => (
                   <div key={label} className="inline-flex items-center gap-2 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-700 dark:text-zinc-300 px-4 py-2 rounded-full text-xs font-medium transition-all duration-300">
@@ -175,7 +173,7 @@ export default function About() {
           {/* Skills & Facts Column */}
           <div className="space-y-10">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-zinc-600 mb-6">Core Technologies</p>
+              <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-zinc-600 mb-6">Technical Stack</p>
               <div className="space-y-5">
                 {SKILLS.map((s, i) => (
                   <SkillBar key={s.label} {...s} index={i} inView={inView} />
@@ -183,18 +181,19 @@ export default function About() {
               </div>
             </div>
 
+            {/* Quick Facts */}
             <motion.div
               variants={fadeUp} custom={5}
               initial="hidden" animate={inView ? "visible" : "hidden"}
               className="relative rounded-3xl overflow-hidden bg-white/60 dark:bg-white/[0.03] border border-gray-200 dark:border-white/10 backdrop-blur-md p-6"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none" />
-              <p className="text-xs font-semibold uppercase tracking-widest text-indigo-400 mb-5">Quick Facts</p>
+              <p className="text-xs font-semibold uppercase tracking-widest text-indigo-400 mb-5">Quick Highlights</p>
               <ul className="space-y-3 text-sm text-gray-600 dark:text-zinc-400">
-                <li className="flex items-center gap-3"><span>🎓</span> Self-taught developer (1+ years)</li>
-                <li className="flex items-center gap-3"><span>🌐</span> Open-source enthusiast</li>
-                <li className="flex items-center gap-3"><span>🏏</span> Weekend cricket player</li>
-                <li className="flex items-center gap-3"><span>🎨</span> Hobby digital painter</li>
+                <li className="flex items-center gap-3"><span>🎓</span> Physics background (Analytical Thinking)</li>
+                <li className="flex items-center gap-3"><span>⚡</span> Full-stack expertise in MERN & Next.js</li>
+                <li className="flex items-center gap-3"><span>🤖</span> Exploring AI for future integration</li>
+                <li className="flex items-center gap-3"><span>🏆</span> Built real-world eCommerce & Auth systems</li>
               </ul>
             </motion.div>
 
@@ -204,7 +203,7 @@ export default function About() {
               href="#contact"
               className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium px-8 py-3.5 rounded-full transition-all duration-300"
             >
-              Let's Work Together →
+              Let's Build Something Together →
             </motion.a>
           </div>
         </div>
