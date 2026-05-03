@@ -16,7 +16,7 @@ const socials = [
   {
     label: "GitHub",
     href: "https://github.com/juhairulislam",
-    color: "#475569", // Light mode default
+    color: "#475569",
     darkColor: "#e2e8f0",
     glow: "rgba(226,232,240,0.15)",
     icon: (
@@ -68,33 +68,23 @@ export default function Footer() {
 
   return (
     <footer className="relative mt-24 overflow-hidden border-t border-black/[0.05] dark:border-white/[0.06] bg-slate-50/50 dark:bg-transparent">
-      {/* Background orbs - Hidden or softened in light mode */}
+      {/* Background orbs */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-50 dark:opacity-100">
         <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-40 rounded-full bg-indigo-500/10 dark:bg-indigo-900/20 blur-[80px]" />
         <div className="absolute bottom-0 left-1/4 w-64 h-32 rounded-full bg-violet-500/10 dark:bg-violet-900/15 blur-[60px]" />
         <div className="absolute bottom-0 right-1/4 w-64 h-32 rounded-full bg-purple-500/10 dark:bg-purple-900/15 blur-[60px]" />
       </div>
 
-      {/* Grid overlay */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.03] dark:opacity-[0.025]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(0,0,0,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.2) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
-
       <div className="relative max-w-6xl mx-auto px-6 pt-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-14 text-center md:text-left">
           
           {/* Brand col */}
-          <div className="md:col-span-1">
+          <div className="flex flex-col items-center md:items-start md:col-span-1">
             <div className="mb-4">
               <span className="text-2xl font-extrabold bg-gradient-to-r from-indigo-600 via-violet-600 to-purple-600 dark:from-indigo-300 dark:via-violet-300 dark:to-purple-300 bg-clip-text text-transparent tracking-tight">
                 Juhairul Islam
               </span>
-              <div className="mt-1 flex items-center gap-2">
+              <div className="mt-1 flex items-center justify-center md:justify-start gap-2">
                 <div className="h-px flex-1 max-w-[40px] bg-gradient-to-r from-indigo-500/40 to-transparent" />
                 <span className="text-[10px] uppercase tracking-[0.25em] text-black/40 dark:text-white/30">
                   Frontend Developer
@@ -122,14 +112,14 @@ export default function Footer() {
             <h4 className="text-[10px] uppercase tracking-[0.3em] text-black/40 dark:text-white/30 font-semibold mb-5">
               Navigation
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3 flex flex-col items-center md:items-start">
               {navLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
                     className="group flex items-center gap-2.5 text-black/50 dark:text-white/40 hover:text-indigo-600 dark:hover:text-white/80 text-sm transition-colors duration-200"
                   >
-                    <span className="w-4 h-px bg-transparent group-hover:bg-gradient-to-r group-hover:from-indigo-500 group-hover:to-violet-500 transition-all duration-300" />
+                    <span className="hidden md:block w-4 h-px bg-transparent group-hover:bg-gradient-to-r group-hover:from-indigo-500 group-hover:to-violet-500 transition-all duration-300" />
                     {link.label}
                   </a>
                 </li>
@@ -138,7 +128,7 @@ export default function Footer() {
           </div>
 
           {/* Contact col */}
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 flex flex-col items-center md:items-start">
             <h4 className="text-[10px] uppercase tracking-[0.3em] text-black/40 dark:text-white/30 font-semibold mb-5">
               Get In Touch
             </h4>
@@ -153,11 +143,11 @@ export default function Footer() {
             </a>
 
             {/* Social icons */}
-            <div>
+            <div className="w-full flex flex-col items-center md:items-start">
               <h4 className="text-[10px] uppercase tracking-[0.3em] text-black/40 dark:text-white/30 font-semibold mb-4">
                 Socials
               </h4>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center justify-center md:justify-start gap-3">
                 {socials.map((s) => (
                   <a
                     key={s.label}
@@ -196,8 +186,8 @@ export default function Footer() {
         </div>
 
         {/* ── Bottom bar ── */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-black/30 dark:text-white/20 text-xs tracking-wide text-center sm:text-left">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+          <p className="text-black/30 dark:text-white/20 text-xs tracking-wide">
             © {year}{" "}
             <span className="font-medium text-indigo-600/70 dark:text-indigo-400/60">
               Juhairul Islam
