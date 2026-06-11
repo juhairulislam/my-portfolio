@@ -92,7 +92,7 @@ const ArrowIcon = () => (
 );
 
 const CategoryBadge = ({ category, color }) => (
-  <span className={`text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-gradient-to-r ${color} bg-clip-text text-transparent border border-indigo-500/20 dark:border-white/10 bg-white/50 dark:bg-transparent backdrop-blur-md`}>
+  <span className={`text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-linear-to-r ${color} bg-clip-text text-transparent border border-indigo-500/20 dark:border-white/10 bg-white/50 dark:bg-transparent backdrop-blur-md`}>
     {category}
   </span>
 );
@@ -113,7 +113,7 @@ export default function ProjectsSection() {
             — My Work —
           </p>
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-            <span className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 dark:from-indigo-200 dark:via-violet-200 dark:to-purple-200 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-slate-900 via-indigo-950 to-slate-900 dark:from-indigo-200 dark:via-violet-200 dark:to-purple-200 bg-clip-text text-transparent">
               Featured Projects
             </span>
           </h2>
@@ -121,9 +121,9 @@ export default function ProjectsSection() {
             A selection of projects I&apos;ve crafted — each one a new challenge, a new lesson.
           </p>
           <div className="mt-8 flex items-center justify-center gap-3">
-            <div className="h-px w-16 bg-gradient-to-r from-transparent to-indigo-500" />
+            <div className="h-px w-16 bg-linear-to-r from-transparent to-indigo-500" />
             <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
-            <div className="h-px w-16 bg-gradient-to-l from-transparent to-indigo-500" />
+            <div className="h-px w-16 bg-linear-to-l from-transparent to-indigo-500" />
           </div>
         </div>
 
@@ -143,7 +143,7 @@ export default function ProjectsSection() {
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent dark:from-[#06060f] dark:via-[#06060f]/40 dark:to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-linear-to-t from-white via-white/20 to-transparent dark:from-[#06060f] dark:via-[#06060f]/40 dark:to-transparent opacity-80" />
                 
                 <div className="absolute top-4 right-4">
                   <CategoryBadge category={project.category} color={project.color} />
@@ -153,7 +153,7 @@ export default function ProjectsSection() {
               {/* Content Area */}
               <div className="p-8">
                 <div className="mb-4">
-                  <h3 className={`text-2xl font-bold bg-gradient-to-r ${project.color} bg-clip-text text-transparent`}>
+                  <h3 className={`text-2xl font-bold bg-linear-to-r ${project.color} bg-clip-text text-transparent`}>
                     {project.name}
                   </h3>
                   <p className="text-indigo-600/70 dark:text-white/40 text-xs font-bold mt-1 uppercase tracking-tighter">
@@ -177,7 +177,7 @@ export default function ProjectsSection() {
                 {/* Main Action Button */}
                 <Link
                   href={`/projects/${project.id}`}
-                  className={`group/btn inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-gradient-to-r ${project.color} text-white dark:text-[#06060f] text-sm font-bold transition-all duration-300 hover:scale-105 shadow-lg shadow-indigo-500/20`}
+                  className={`group/btn inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-linear-to-r ${project.color} text-white dark:text-[#06060f] text-sm font-bold transition-all duration-300 hover:scale-105 shadow-lg shadow-indigo-500/20`}
                 >
                   View Details
                   <ArrowIcon />
