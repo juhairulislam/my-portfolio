@@ -351,7 +351,7 @@ export default function Education() {
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           className="flex items-center gap-3 mb-5"
         >
-          <div className="w-8 h-px bg-gradient-to-r from-indigo-500 to-transparent" />
+          <div className="w-8 h-px bg-linear-to-r from-indigo-500 to-transparent" />
           <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-indigo-500 dark:text-indigo-400">
             Education
           </span>
@@ -365,7 +365,7 @@ export default function Education() {
             className="font-[family-name:var(--font-syne)] text-3xl sm:text-4xl lg:text-[3rem] font-extrabold tracking-tight leading-[1.1] text-gray-900 dark:text-white"
           >
             Where I learned{" "}
-            <span className="bg-gradient-to-r from-indigo-500 via-violet-500 to-purple-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-indigo-500 via-violet-500 to-purple-500 bg-clip-text text-transparent">
               to think deeply
             </span>
           </motion.h2>
