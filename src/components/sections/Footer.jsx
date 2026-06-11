@@ -81,11 +81,11 @@ export default function Footer() {
           {/* Brand col */}
           <div className="flex flex-col items-center md:items-start md:col-span-1">
             <div className="mb-4">
-              <span className="text-2xl font-extrabold bg-gradient-to-r from-indigo-600 via-violet-600 to-purple-600 dark:from-indigo-300 dark:via-violet-300 dark:to-purple-300 bg-clip-text text-transparent tracking-tight">
+              <span className="text-2xl font-extrabold bg-linear-to-r from-indigo-600 via-violet-600 to-purple-600 dark:from-indigo-300 dark:via-violet-300 dark:to-purple-300 bg-clip-text text-transparent tracking-tight">
                 Juhairul Islam
               </span>
               <div className="mt-1 flex items-center justify-center md:justify-start gap-2">
-                <div className="h-px flex-1 max-w-[40px] bg-gradient-to-r from-indigo-500/40 to-transparent" />
+                <div className="h-px flex-1 max-w-[40px] bg-linear-to-r from-indigo-500/40 to-transparent" />
                 <span className="text-[10px] uppercase tracking-[0.25em] text-black/40 dark:text-white/30">
                   Frontend Developer
                 </span>
@@ -119,7 +119,7 @@ export default function Footer() {
                     href={link.href}
                     className="group flex items-center gap-2.5 text-black/50 dark:text-white/40 hover:text-indigo-600 dark:hover:text-white/80 text-sm transition-colors duration-200"
                   >
-                    <span className="hidden md:block w-4 h-px bg-transparent group-hover:bg-gradient-to-r group-hover:from-indigo-500 group-hover:to-violet-500 transition-all duration-300" />
+                    <span className="hidden md:block w-4 h-px bg-transparent group-hover:bg-linear-to-r group-hover:from-indigo-500 group-hover:to-violet-500 transition-all duration-300" />
                     {link.label}
                   </a>
                 </li>
@@ -176,13 +176,13 @@ export default function Footer() {
 
         {/* ── Divider ── */}
         <div className="relative flex items-center gap-4 mb-8">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-black/[0.05] dark:via-white/[0.08] to-transparent" />
+          <div className="flex-1 h-px bg-linear-to-r from-transparent via-black/[0.05] dark:via-white/[0.08] to-transparent" />
           <div className="flex items-center gap-1.5">
             <div className="w-1 h-1 rounded-full bg-indigo-500/30 dark:bg-indigo-500/50" />
             <div className="w-1.5 h-1.5 rounded-full bg-violet-500/40 dark:bg-violet-500/60" />
             <div className="w-1 h-1 rounded-full bg-purple-500/30 dark:bg-purple-500/50" />
           </div>
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-black/[0.05] dark:via-white/[0.08] to-transparent" />
+          <div className="flex-1 h-px bg-linear-to-r from-transparent via-black/[0.05] dark:via-white/[0.08] to-transparent" />
         </div>
 
         {/* ── Bottom bar ── */}
