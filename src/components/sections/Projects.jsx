@@ -5,6 +5,25 @@ import Image from "next/image";
 
 // ── Project Data ──────────────────────────────────────────────────────────
 export const projects = [
+   {
+    id: "digitool",
+    name: "Digital Tools Store",
+    tagline: "Digital Tools Buying Platform",
+    description:
+      "A streamlined digital marketplace interface focusing on a frictionless user experience. This project demonstrates advanced React state management, featuring a dynamic dual-view layout where users can switch between a product gallery and a real-time updated shopping cart without page reloads.",
+    challenges:
+      "Managing the global cart state—ensuring that adding, removing, and calculating totals happened instantly across different UI components—was the core technical challenge. Implementing React-Toastify for non-intrusive user feedback while maintaining a clean UI aesthetic required precise timing.",
+    improvements:
+      "I aim to add a persistent cart feature using Browser Local Storage, implement a comprehensive product search with category filtering, and create a system for digital product delivery via email after checkout.",
+    image: "/projects/digitool.png",
+    tech: ["React.js", "JavaScript ES6+", "Tailwind CSS", "DaisyUI"],
+    live: "https://a06-juhairul-b13.netlify.app",
+    github: "https://github.com/juhairulislam/A06-Juhairul-B13",
+    category: "Frontend",
+    color: "from-cyan-600 to-blue-500",
+    glowColor: "rgba(6, 182, 212, 0.15)",
+    lightGlow: "rgba(6, 182, 212, 0.08)",
+  },
   {
     id: "suncart",
     name: "SunCart",
@@ -43,25 +62,7 @@ export const projects = [
     glowColor: "rgba(139, 92, 246, 0.15)",
     lightGlow: "rgba(139, 92, 246, 0.08)",
   },
-  {
-    id: "digitool",
-    name: "Digital Tools Store",
-    tagline: "Digital Tools Buying Platform",
-    description:
-      "A streamlined digital marketplace interface focusing on a frictionless user experience. This project demonstrates advanced React state management, featuring a dynamic dual-view layout where users can switch between a product gallery and a real-time updated shopping cart without page reloads.",
-    challenges:
-      "Managing the global cart state—ensuring that adding, removing, and calculating totals happened instantly across different UI components—was the core technical challenge. Implementing React-Toastify for non-intrusive user feedback while maintaining a clean UI aesthetic required precise timing.",
-    improvements:
-      "I aim to add a persistent cart feature using Browser Local Storage, implement a comprehensive product search with category filtering, and create a system for digital product delivery via email after checkout.",
-    image: "/projects/digitool.png",
-    tech: ["React.js", "JavaScript ES6+", "Tailwind CSS", "DaisyUI"],
-    live: "https://a06-juhairul-b13.netlify.app",
-    github: "https://github.com/juhairulislam/A06-Juhairul-B13",
-    category: "Frontend",
-    color: "from-cyan-600 to-blue-500",
-    glowColor: "rgba(6, 182, 212, 0.15)",
-    lightGlow: "rgba(6, 182, 212, 0.08)",
-  },
+ 
   {
     id: "github-tracker",
     name: "GitHub Issue Tracker",
