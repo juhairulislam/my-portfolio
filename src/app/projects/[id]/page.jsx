@@ -117,12 +117,12 @@ export default function ProjectDetail({ params }) {
             sizes="(max-width: 1024px) 100vw, 1024px"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#06060f] via-[#06060f]/20 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-[#06060f] via-[#06060f]/20 to-transparent" />
 
           {/* Overlay badge */}
           <div className="absolute bottom-6 left-6">
             <span
-              className={`text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full border border-white/10 bg-[#06060f]/60 backdrop-blur-sm bg-gradient-to-r ${project.color} bg-clip-text text-transparent`}
+              className={`text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full border border-white/10 bg-[#06060f]/60 backdrop-blur-sm bg-linear-to-r ${project.color} bg-clip-text text-transparent`}
             >
               {project.category}
             </span>
@@ -133,7 +133,7 @@ export default function ProjectDetail({ params }) {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-10">
           <div>
             <h1
-              className={`text-4xl md:text-5xl font-extrabold bg-gradient-to-r ${project.color} bg-clip-text text-transparent leading-tight`}
+              className={`text-4xl md:text-5xl font-extrabold bg-linear-to-r ${project.color} bg-clip-text text-transparent leading-tight`}
             >
               {project.name}
             </h1>
@@ -146,7 +146,7 @@ export default function ProjectDetail({ params }) {
               href={project.live}
               target="_blank"
               rel="noopener noreferrer"
-              className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r ${project.color} text-[#06060f] text-sm font-bold transition-all duration-300 hover:opacity-90 hover:scale-[1.03]`}
+              className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-linear-to-r ${project.color} text-[#06060f] text-sm font-bold transition-all duration-300 hover:opacity-90 hover:scale-[1.03]`}
             >
               <ExternalIcon />
               Live Demo
@@ -177,7 +177,7 @@ export default function ProjectDetail({ params }) {
             {project.tech.map((t) => (
               <span
                 key={t}
-                className={`px-3.5 py-1.5 rounded-lg text-sm font-mono border border-white/[0.08] bg-white/[0.03] bg-gradient-to-r ${project.color} bg-clip-text text-transparent`}
+                className={`px-3.5 py-1.5 rounded-lg text-sm font-mono border border-white/[0.08] bg-white/[0.03] bg-linear-to-r ${project.color} bg-clip-text text-transparent`}
               >
                 {t}
               </span>
