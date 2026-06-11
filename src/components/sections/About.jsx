@@ -90,7 +90,7 @@ function SkillBar({ label, pct, color, index, inView }) {
           initial={{ width: 0 }}
           animate={inView ? { width: `${pct}%` } : { width: 0 }}
           transition={{ duration: 1, delay: index * 0.1 + 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className={`absolute inset-y-0 left-0 rounded-full bg-gradient-to-r ${color}`}
+          className={`absolute inset-y-0 left-0 rounded-full bg-linear-to-r ${color}`}
         />
         <motion.div
           initial={{ left: 0, opacity: 0 }}
@@ -140,7 +140,7 @@ export default function About() {
           initial="hidden" animate={inView ? "visible" : "hidden"}
           className="flex items-center gap-3 mb-5"
         >
-          <div className="w-8 h-px bg-gradient-to-r from-indigo-500 to-transparent" />
+          <div className="w-8 h-px bg-linear-to-r from-indigo-500 to-transparent" />
           <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-indigo-600 dark:text-indigo-400">About Me</span>
         </motion.div>
 
@@ -152,10 +152,10 @@ export default function About() {
         >
           The story{" "}
           <span className="relative inline-block">
-            <span className="relative z-10 bg-gradient-to-r from-indigo-600 via-violet-600 to-purple-600 dark:from-indigo-400 dark:via-violet-400 dark:to-purple-400 bg-clip-text text-transparent">
+            <span className="relative z-10 bg-linear-to-r from-indigo-600 via-violet-600 to-purple-600 dark:from-indigo-400 dark:via-violet-400 dark:to-purple-400 bg-clip-text text-transparent">
               behind the code
             </span>
-            <span className="absolute -bottom-1 left-0 right-0 h-px bg-gradient-to-r from-indigo-500/60 to-transparent" />
+            <span className="absolute -bottom-1 left-0 right-0 h-px bg-linear-to-r from-indigo-500/60 to-transparent" />
           </span>
         </motion.h2>
 
@@ -210,7 +210,7 @@ export default function About() {
                   initial="hidden" animate={inView ? "visible" : "hidden"}
                   className="group relative flex items-start gap-4 rounded-2xl border border-zinc-100 dark:border-white/[0.07] bg-zinc-50/50 dark:bg-white/[0.02] px-5 py-4 hover:border-indigo-500/30 hover:bg-indigo-500/[0.04] transition-all duration-400 overflow-hidden"
                 >
-                  <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-indigo-500/[0.04] to-transparent" />
+                  <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-linear-to-r from-indigo-500/[0.04] to-transparent" />
                   <div className="relative z-10 w-8 h-8 shrink-0 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-600 dark:text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white group-hover:border-indigo-500 transition-all duration-300">
                     <Icon className="text-xs" />
                   </div>
@@ -249,8 +249,8 @@ export default function About() {
               className="relative rounded-2xl border border-zinc-100 dark:border-white/[0.07] bg-zinc-50/50 dark:bg-white/[0.02] p-6 overflow-hidden"
             >
               <div className="pointer-events-none absolute top-0 right-0 w-28 h-28 bg-indigo-500/[0.08] rounded-full blur-2xl" />
-              <div className="pointer-events-none absolute top-0 right-0 w-px h-20 bg-gradient-to-b from-indigo-500/40 to-transparent" />
-              <div className="pointer-events-none absolute top-0 right-0 h-px w-20 bg-gradient-to-l from-indigo-500/40 to-transparent" />
+              <div className="pointer-events-none absolute top-0 right-0 w-px h-20 bg-linear-to-b from-indigo-500/40 to-transparent" />
+              <div className="pointer-events-none absolute top-0 right-0 h-px w-20 bg-linear-to-l from-indigo-500/40 to-transparent" />
 
               <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-indigo-600 dark:text-indigo-400 mb-5">
                 Quick Highlights
