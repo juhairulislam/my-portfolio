@@ -57,7 +57,7 @@ export const projects = [
     tech: ["Next.js", "Tailwind CSS", "DaisyUI", "Recharts", "React Icons"],
     live: "https://a-07-juhairul-b-13-f5xy.vercel.app/",
     github: "https://github.com/juhairulislam/A-07-Juhairul-B-13",
-    category: "Full Stack",
+    category: "Frontend",
     color: "from-violet-600 to-purple-500",
     glowColor: "rgba(139, 92, 246, 0.15)",
     lightGlow: "rgba(139, 92, 246, 0.08)",
