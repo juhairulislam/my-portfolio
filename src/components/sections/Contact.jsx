@@ -402,13 +402,13 @@ export default function Contact() {
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 14 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }} className="flex items-center gap-3 mb-5">
-          <div className="w-8 h-px bg-gradient-to-r from-indigo-500 to-transparent" />
+          <div className="w-8 h-px bg-linear-to-r from-indigo-500 to-transparent" />
           <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-indigo-500 dark:text-indigo-400">Contact</span>
         </motion.div>
 
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-16">
           <motion.h2 initial={{ opacity: 0, y: 22 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.08, duration: 0.65, ease: [0.22, 1, 0.36, 1] }} className="font-[family-name:var(--font-syne)] text-3xl sm:text-4xl lg:text-[3rem] font-extrabold tracking-tight leading-[1.1] text-gray-900 dark:text-white">
-            Let's build something <span className="bg-gradient-to-r from-indigo-500 via-violet-500 to-purple-500 bg-clip-text text-transparent">together</span>
+            Let's build something <span className="bg-linear-to-r from-indigo-500 via-violet-500 to-purple-500 bg-clip-text text-transparent">together</span>
           </motion.h2>
           <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.2, duration: 0.6 }} className="flex items-center gap-2 shrink-0">
             <TbSparkles className="text-indigo-400" size={14} />
