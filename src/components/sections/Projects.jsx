@@ -5,25 +5,44 @@ import Image from "next/image";
 
 // ── Project Data ──────────────────────────────────────────────────────────
 export const projects = [
-   {
-    id: "digitool",
-    name: "Digital Tools Store",
-    tagline: "Digital Tools Buying Platform",
-    description:
-      "A streamlined digital marketplace interface focusing on a frictionless user experience. This project demonstrates advanced React state management, featuring a dynamic dual-view layout where users can switch between a product gallery and a real-time updated shopping cart without page reloads.",
-    challenges:
-      "Managing the global cart state—ensuring that adding, removing, and calculating totals happened instantly across different UI components—was the core technical challenge. Implementing React-Toastify for non-intrusive user feedback while maintaining a clean UI aesthetic required precise timing.",
-    improvements:
-      "I aim to add a persistent cart feature using Browser Local Storage, implement a comprehensive product search with category filtering, and create a system for digital product delivery via email after checkout.",
-    image: "/projects/digitool.png",
-    tech: ["React.js", "JavaScript ES6+", "Tailwind CSS", "DaisyUI"],
-    live: "https://a06-juhairul-b13.netlify.app",
-    github: "https://github.com/juhairulislam/A06-Juhairul-B13",
-    category: "Frontend",
-    color: "from-cyan-600 to-blue-500",
-    glowColor: "rgba(6, 182, 212, 0.15)",
-    lightGlow: "rgba(6, 182, 212, 0.08)",
-  },
+ {
+id: "ideavault",
+name: "IdeaVault",
+tagline: "A Collaborative Platform for Startup Innovation",
+
+description:
+"IdeaVault is a production-ready full-stack platform where entrepreneurs, innovators, and aspiring founders can share, explore, and validate startup ideas through community engagement. The application combines secure authentication, intelligent content management, and interactive discussions to create a centralized hub for discovering innovative business concepts. Built with modern web technologies, the platform emphasizes scalability, security, and an exceptional user experience.",
+
+challenges:
+"Developing a secure and seamless authentication flow using Better Auth Authentication and JWT-based authorization was one of the project's most significant challenges. Ensuring that protected routes, ownership-based permissions, and CRUD operations remained secure across both client and server required careful architectural planning. Additional complexity came from synchronizing real-time community interactions, implementing dynamic search and filtering, and maintaining consistent state management throughout the application while preserving performance and responsiveness.",
+
+improvements:
+"Future development plans include AI-powered startup idea evaluation, personalized recommendation systems based on user interests, advanced analytics dashboards for tracking idea engagement, real-time notifications, bookmarking and collections, collaborative idea development features, and enhanced search powered by semantic and AI-driven discovery mechanisms.",
+
+image: "/projects/ideavault.png",
+
+tech: [
+"Next.js",
+"JavaScript(ES6+)",
+"Node.js",
+"Express.js",
+"MongoDB",
+"Better Auth",
+"JWT",
+"Tailwind CSS",
+
+],
+
+live: "https://ideavault-fawn.vercel.app/",
+github: "https://github.com/juhairulislam/IdeaVault",
+
+category: "Full Stack",
+
+color: "from-emerald-600 to-green-500",
+glowColor: "rgba(16, 185, 129, 0.15)",
+lightGlow: "rgba(16, 185, 129, 0.08)",
+}
+,
   {
     id: "suncart",
     name: "SunCart",
