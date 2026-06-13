@@ -98,7 +98,6 @@ export default function ProjectDetail({ params }) {
       </div>
 
       <div className="relative max-w-5xl mx-auto px-4 py-12">
-        {/* Back button */}
         <Link
           href="/#projects"
           className="inline-flex items-center gap-2 text-white/40 hover:text-white/70 text-sm transition-colors duration-200 mb-10 group"
